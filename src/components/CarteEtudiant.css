@@ -1,0 +1,26 @@
+.carte-etudiant {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px;
+  background-color: #f5f5f5;
+  width: 240px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.carte-etudiant h2 {
+  margin: 0 0 8px;
+  color: #0354A9;
+}
+
+.carte-etudiant .filiere {
+  color: #666;
+  font-size: 14px;
+}
+
+.carte-etudiant .note {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: bold;
+  color: #0E9FE7;
+}
