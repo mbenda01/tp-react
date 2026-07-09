@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import useEtudiants from '../hooks/useEtudiants';
-import FormulaireEtudiant from './FormulaireEtudiant';
+import FormulaireEtudiant from '../components/FormulaireEtudiant';
 
 const Etudiants = () => {
   const { etudiants, chargement, erreur, messageSucces, creer, modifier, supprimer } = useEtudiants();
