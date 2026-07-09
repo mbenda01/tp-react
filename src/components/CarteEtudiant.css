@@ -1,26 +1,24 @@
-.carte-etudiant {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  margin: 12px;
-  background-color: #f5f5f5;
-  width: 240px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-}
-
-.carte-etudiant h2 {
-  margin: 0 0 8px;
-  color: #0354A9;
-}
-
-.carte-etudiant .filiere {
-  color: #666;
-  font-size: 14px;
-}
-
-.carte-etudiant .note {
+.badge {
   display: inline-block;
-  margin-top: 8px;
-  font-weight: bold;
-  color: #0E9FE7;
+  margin: 8px 0;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.badge.vert   { background-color: #16a34a; }
+.badge.rouge  { background-color: #dc2626; }
+.badge.orange { background-color: #ea580c; }
+
+.btn-felicitations {
+  display: block;
+  margin: 6px 0;
+  background: #EE5B9D;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
 }
