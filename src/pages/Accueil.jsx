@@ -1,7 +1,7 @@
 const Accueil = () => (
-  <div style={{ padding: '24px' }}>
+  <div className="page">
     <h1>Bienvenue sur la plateforme</h1>
-    <p>Gérez vos étudiants facilement.</p>
+    <p style={{ color: 'var(--muted)' }}>Gérez vos étudiants facilement.</p>
   </div>
 );
 

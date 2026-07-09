@@ -6,7 +6,6 @@ const FormulaireEtudiant = ({ etudiant, onSoumettre, onAnnuler }) => {
   const [note, setNote] = useState('');
   const [filiere, setFiliere] = useState('');
 
-  // Pré-remplir si édition (etudiant non null)
   useEffect(() => {
     if (etudiant) {
       setNom(etudiant.nom);
@@ -25,15 +24,15 @@ const FormulaireEtudiant = ({ etudiant, onSoumettre, onAnnuler }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '8px', maxWidth: '400px', margin: '12px 0', padding: '12px', border: '1px solid #ddd', borderRadius: '8px' }}>
-      <h3>{etudiant ? 'Modifier' : 'Nouvel étudiant'}</h3>
+    <form onSubmit={handleSubmit} className="card" style={{ display: 'flex', flexDirection: 'column', gap: 10, maxWidth: 420, margin: '12px 0' }}>
+      <h3>{etudiant ? 'Modifier l\'étudiant' : 'Nouvel étudiant'}</h3>
       <input placeholder="Prénom" value={prenom} onChange={(e) => setPrenom(e.target.value)} />
       <input placeholder="Nom" value={nom} onChange={(e) => setNom(e.target.value)} />
       <input type="number" placeholder="Note /20" value={note} onChange={(e) => setNote(e.target.value)} />
       <input placeholder="Filière" value={filiere} onChange={(e) => setFiliere(e.target.value)} />
-      <div style={{ display: 'flex', gap: '8px' }}>
+      <div style={{ display: 'flex', gap: 8 }}>
         <button type="submit">{etudiant ? 'Enregistrer' : 'Créer'}</button>
-        <button type="button" onClick={onAnnuler}>Annuler</button>
+        <button type="button" className="btn-secondary" onClick={onAnnuler}>Annuler</button>
       </div>
     </form>
   );

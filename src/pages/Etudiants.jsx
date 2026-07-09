@@ -21,13 +21,16 @@ const Etudiants = () => {
   if (chargement) return <p>Chargement...</p>;
 
   return (
-    <div style={{ padding: '16px' }}>
-      {erreur && <p style={{ color: 'red' }}>{erreur}</p>}
-      {messageSucces && <p style={{ color: 'green' }}>{messageSucces}</p>}
+    <div>
+      {erreur && <p className="msg-erreur">{erreur}</p>}
+      {messageSucces && <p className="msg-succes">{messageSucces}</p>}
 
-      <button onClick={() => { setAfficherFormulaire(true); setEtudiantEdite(null); }}>
-        + Nouvel étudiant
-      </button>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+        <h1>Étudiants</h1>
+        <button onClick={() => { setAfficherFormulaire(true); setEtudiantEdite(null); }}>
+          + Nouvel étudiant
+        </button>
+      </div>
 
       {afficherFormulaire && (
         <FormulaireEtudiant
@@ -37,7 +40,7 @@ const Etudiants = () => {
         />
       )}
 
-      <table border="1" cellPadding="8" style={{ borderCollapse: 'collapse', width: '100%', marginTop: '12px' }}>
+      <table>
         <thead>
           <tr><th>Prénom</th><th>Nom</th><th>Note</th><th>Filière</th><th>Actions</th></tr>
         </thead>
@@ -48,12 +51,10 @@ const Etudiants = () => {
               <td>{e.nom}</td>
               <td>{e.note}/20</td>
               <td>{e.filiere}</td>
-              <td>
+              <td style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
                 <Link to={`/etudiants/${e.id}`}>Détail</Link>
-                {' '}
-                <button onClick={() => { setEtudiantEdite(e); setAfficherFormulaire(true); }}>Modifier</button>
-                {' '}
-                <button onClick={() => supprimer(e.id)}>Supprimer</button>
+                <button className="btn-secondary" onClick={() => { setEtudiantEdite(e); setAfficherFormulaire(true); }}>Modifier</button>
+                <button className="btn-danger" onClick={() => supprimer(e.id)}>Supprimer</button>
               </td>
             </tr>
           ))}

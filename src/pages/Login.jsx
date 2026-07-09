@@ -4,16 +4,17 @@ const Login = () => {
   const navigate = useNavigate();
 
   const seConnecter = () => {
-    // Stocke un faux token JWT
     localStorage.setItem('token', 'faux-jwt-token-demo');
-    // Redirige vers le dashboard, avec un state pour le message de bienvenue
     navigate('/dashboard', { state: { message: 'Connexion réussie, bienvenue !' } });
   };
 
   return (
-    <div style={{ padding: '24px' }}>
-      <h1>Connexion</h1>
-      <button onClick={seConnecter}>Se connecter</button>
+    <div className="page">
+      <div className="card" style={{ maxWidth: 380, margin: '40px auto', textAlign: 'center' }}>
+        <h1>Connexion</h1>
+        <p style={{ color: 'var(--muted)', marginBottom: 20 }}>Accédez à votre espace</p>
+        <button onClick={seConnecter} style={{ width: '100%' }}>Se connecter</button>
+      </div>
     </div>
   );
 };
