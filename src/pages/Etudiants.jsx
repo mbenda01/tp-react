@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import useEtudiants from '../hooks/useEtudiants';
 import FormulaireEtudiant from '../components/FormulaireEtudiant';
 
@@ -48,7 +49,10 @@ const Etudiants = () => {
               <td>{e.note}/20</td>
               <td>{e.filiere}</td>
               <td>
+                <Link to={`/etudiants/${e.id}`}>Détail</Link>
+                {' '}
                 <button onClick={() => { setEtudiantEdite(e); setAfficherFormulaire(true); }}>Modifier</button>
+                {' '}
                 <button onClick={() => supprimer(e.id)}>Supprimer</button>
               </td>
             </tr>

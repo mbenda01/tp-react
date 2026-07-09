@@ -26,6 +26,18 @@ const etudiantService = {
   remove: async (id) => {
     await api.delete(`/users/${id}`);
   },
+  // GET /users/:id (mappé au format étudiant)
+  getById: async (id) => {
+    const reponse = await api.get(`/users/${id}`);
+    const u = reponse.data;
+    return {
+      id: u.id,
+      nom: u.name.split(' ')[1] || u.name,
+      prenom: u.name.split(' ')[0],
+      note: 10 + (u.id % 11),
+      filiere: u.company.name,
+    };
+  },
 };
 
 export default etudiantService;
